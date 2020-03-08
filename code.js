@@ -32,15 +32,35 @@ class MyString{
   //  this.YourString = YourString ;
   // }
   reverse(YourString){
+    this.YourString = YourString;
+      
+    //  newString  +=  YourString[YourString.length-1]
+    //  console.log('herestart',YourString[YourString.length-1])
+    //  console.log('herestart', newString )
+    let newString  = '' ;
+    for(   let i = YourString.length    ;  newString.length <= this.YourString.length ;      ){
+      
+      i--
+      newString  +=  YourString[i]
+      
+      console.log(newString.indexOf('undefined') )
+      if(newString.indexOf('undefined') >= 0){
+     let f =  newString.slice(  YourString.length ,  -1);
      
+      console.log('here f', f)
+    }
+      console.log(`${newString}`)
+    }
+   
   }
   usFirst(YourString){
     this.YourString = YourString;
+     
 return (`${this.YourString[0].toUpperCase()}${this.YourString.slice(1, -1)}`)
   }
   usWords(YourString){
     this.YourString = YourString;
-    return this.YourString[this.YourString.indexOf(' ')+1].toUpperCase()
+    return YourString.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
     // +1).toUpperCase()
  
 // }
@@ -49,4 +69,5 @@ return (`${this.YourString[0].toUpperCase()}${this.YourString.slice(1, -1)}`)
 // const mystring = new MyString('')
  const str = new  MyString();
 console.log(str.usFirst('dasdasa'))
-console.log(str.usWords('dasdasa dasasd ad sada dsa'))
+console.log(str.reverse('1234567890'))
+console.log(str.usWords('hello hi hi hello hi'))
