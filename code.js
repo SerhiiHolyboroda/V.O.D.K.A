@@ -1,52 +1,55 @@
-class Worker{
- constructor(firstName , secondName, rate, days){
-    this.name = firstName  ;
-    this.sname = secondName ;
-    this.rate = rate ;
-    this.days = days ;
- }
-get getSelary(){
-  return this.rate * this.days
-}
-}
-const worker1 = new Worker('ivan','oleg', 22, 7)
-const worker2 = new Worker('oleg','ivan', 18, 6)
-console.log(worker1.name)
-console.log(worker1.sname)
-console.log(worker1.rate)
-console.log(worker1.days)
-console.log(worker1.getSelary)
+import {SHOP} from './shop.js' ;
+ document.querySelector(".Menu__stats__Balance").innerHTML = `${SHOP.getStorage()}`;
+ document.querySelector(".Menu__stats__Beer" ).innerHTML = `${SHOP._beerCount}`;
+ document.querySelector(".Menu__stats__Vine").innerHTML = `${SHOP._vineCount}`;
+ document.querySelector(".Menu__stats__Pepsi" ).innerHTML = `${SHOP._pepsiCount}`;
 
 
-console.log(worker2.name)
-console.log(worker2.sname)
-console.log(worker2.rate)
-console.log(worker2.days)
-console.log(worker2.getSelary)
-
-console.log(worker1.getSelary + worker2.getSelary)
+  
  
+ let buttonPreview = document.querySelector('.Menu__buy__buttonPreview')
+ buttonPreview.addEventListener('click', function(){
+   
+    let amountOf = document.querySelector('.Menu__buy__amountOf')
+    let drinks=document.getElementsByName('drinks');
+    for (let i=0;i<drinks.length; i++) {
+        if (drinks[i].checked) {
+          if(drinks[i].value == 'Beer' && SHOP._beerCount >= amountOf.value ){
+              document.querySelector('.Menu__buy__preview').innerHTML += `<div>  ${drinks[i].value} ${amountOf.value} </div>`
+             SHOP.sell(amountOf.value , 0, 0)
+             document.querySelector(".Menu__stats__Balance").innerHTML = `${SHOP.getStorage()}`;
+             document.querySelector(".Menu__stats__Beer" ).innerHTML = `${SHOP._beerCount-amountOf.value}`;
+             
 
-class MyString{
-  // constructor(YourString){
-  //  this.YourString = YourString ;
-  // }
-  reverse(YourString){
+          } 
+          if(drinks[i].value == 'Vine' && SHOP._vineCount >= amountOf.value ){
+            document.querySelector('.Menu__buy__preview').innerHTML += `<div>  ${drinks[i].value} ${amountOf.value} </div>`
+            SHOP.sell(0 , amountOf.value, 0)
+            document.querySelector(".Menu__stats__Balance").innerHTML = `${SHOP.getStorage()}`;
+            document.querySelector(".Menu__stats__Vine").innerHTML  =  ` ${SHOP._vineCount-amountOf.value}`  ;
+
+
+
+          } 
+         if(drinks[i].value == 'Pepsi' && SHOP._pepsiCount >= amountOf.value ){
+          document.querySelector('.Menu__buy__preview').innerHTML += `<div> ${drinks[i].value} ${amountOf.value} </div>`;
+           SHOP.sell(0 , amountOf.value, 0)
+           document.querySelector(".Menu__stats__Balance").innerHTML = `${SHOP.getStorage()}`;
+           document.querySelector(".Menu__stats__Pepsi" ).innerHTML  =   `${SHOP._pepsiCount-amountOf.value} ` ;
+          } 
+        
+               
+    }
      
-  }
-  usFirst(YourString){
-    this.YourString = YourString;
-return (`${this.YourString[0].toUpperCase()}${this.YourString.slice(1, -1)}`)
-  }
-  usWords(YourString){
-    this.YourString = YourString;
-    return this.YourString[this.YourString.indexOf(' ')+1].toUpperCase()
-    // +1).toUpperCase()
- 
+   
+}
+// return{ 
+//   _name: drinks[i].value ,
+//   _amount: amountOf.value
 // }
-}
-}
-// const mystring = new MyString('')
- const str = new  MyString();
-console.log(str.usFirst('dasdasa'))
-console.log(str.usWords('dasdasa dasasd ad sada dsa'))
+ 
+ })
+ 
+document.querySelector('.Menu__buy__buttonBuy').addEventListener('click', function(){
+  document.querySelector('.Menu__count').innerHTML =  document.querySelector('.Menu__buy__preview').innerHTML
+})

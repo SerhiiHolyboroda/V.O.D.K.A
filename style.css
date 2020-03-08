@@ -1,0 +1,95 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.Menu {
+  margin: 25% 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Menu__stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: gainsboro;
+  height: 400px;
+  width: 200px;
+}
+
+.Menu__stats__Balance {
+  border: 2px solid black;
+}
+
+.Menu__stats__Beer {
+  border: 2px solid black;
+}
+
+.Menu__stats__Vine {
+  border: 2px solid black;
+}
+
+.Menu__stats__Pepsi {
+  border: 2px solid black;
+}
+
+.Menu__buy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: gainsboro;
+  height: 400px;
+  width: 200px;
+}
+
+.Menu__buy__preview {
+  height: 100px;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Menu__count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: gainsboro;
+  height: 400px;
+  width: 200px;
+}
+
+.Menu__count__preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/*# sourceMappingURL=style.css.map */

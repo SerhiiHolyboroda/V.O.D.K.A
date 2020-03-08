@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
-    <script src="./code.js"></script>
+    <div class="">
+        <div class="Menu">
+
+            <div class="Menu__stats">
+                <div>Баланс</div>
+                <div class="Menu__stats__Balance"> </div>
+                <div>Пиво</div>
+                <div class="Menu__stats__Beer"> </div>
+                <div>Вино</div>
+                <div class="Menu__stats__Vine"> </div>
+                <div>Пепсі</div>
+                <div class="Menu__stats__Pepsi"> </div>
+            </div>
+
+            <div class="Menu__buy">
+                <div>
+                    <input type="text" class="Menu__buy__amountOf">
+                </div>
+                <div>
+                    <input type="radio" name="drinks"  value="Beer">Пиво
+                    <input type="radio" name="drinks"   value="Vine">Вино
+                    <input type="radio" name="drinks"   value="Pepsi">Пепсі
+                </div>
+                <button type="button" class="Menu__buy__buttonPreview">Додати</button>
+                <div class="Menu__buy__preview"> </div>
+
+                <button type="button" class="Menu__buy__buttonBuy"> Купити</button>
+            </div>
+            <div class="Menu__count">
+
+
+
+
+            </div>
+        </div>
+        <script type="module" src="./code.js"></script>
 </body>
-</html>   
+
+</html>
