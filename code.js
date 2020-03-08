@@ -30,7 +30,7 @@ import {SHOP} from './shop.js' ;
 
 
 
-<<<<<<< HEAD
+ 
           } 
          if(drinks[i].value == 'Pepsi' && SHOP._pepsiCount >= amountOf.value ){
           document.querySelector('.Menu__buy__preview').innerHTML += `<div> ${drinks[i].value} ${amountOf.value} </div>`;
@@ -99,4 +99,4 @@ return (`${this.YourString[0].toUpperCase()}${this.YourString.slice(1, -1)}`)
 console.log(str.usFirst('dasdasa'))
 console.log(str.reverse('1234567890'))
 console.log(str.usWords('hello hi hi hello hi'))
->>>>>>> 9bdf6ef1ce229bcaac09f82f3f33f42dc43035a7
+ 
